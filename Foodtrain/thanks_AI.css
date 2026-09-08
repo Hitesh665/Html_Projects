@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 50% 35%,
+            rgba(34, 197, 94, 0.12),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #06110b,
+            #0b1b12,
+            #07140d
+        );
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   THANK YOU
+========================= */
+
+#thanks {
+    position: relative;
+
+    margin-bottom: 30px;
+
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 800;
+    letter-spacing: -3px;
+
+    color: #f8fafc;
+
+    /* Entry animation */
+    animation:
+        thankYouAppear 1s cubic-bezier(.17,.67,.3,1.2) forwards;
+
+    opacity: 0;
+    transform: translateY(35px) scale(0.9);
+}
+
+
+/* Green check mark */
+
+#thanks::before {
+    content: "✓";
+
+    display: inline-flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 75px;
+    height: 75px;
+
+    margin-right: 22px;
+
+    font-size: 2.5rem;
+    font-weight: 800;
+
+    color: #ffffff;
+
+    background: #22c55e;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 0 8px rgba(34, 197, 94, 0.08),
+        0 0 35px rgba(34, 197, 94, 0.3);
+
+    animation:
+        checkAppear 0.8s ease-out 0.7s both;
+}
+
+
+/* Thank-you entrance */
+
+@keyframes thankYouAppear {
+
+    0% {
+        opacity: 0;
+        transform: translateY(35px) scale(0.9);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-5px) scale(1.02);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Check animation */
+
+@keyframes checkAppear {
+
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(1.15);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+#message {
+    max-width: 700px;
+
+    font-size: clamp(1.05rem, 2vw, 1.35rem);
+    font-weight: 500;
+
+    line-height: 1.8;
+
+    color: #cbd5e1;
+
+    animation:
+        messageAppear 1s ease-out 0.5s both;
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Highlight the station placeholder */
+
+#message::first-line {
+    color: #86efac;
+}
+
+
+/* =========================
+   DECORATIVE LINE
+========================= */
+
+body::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 3px;
+
+    bottom: 55px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #22c55e,
+        transparent
+    );
+
+    border-radius: 50%;
+
+    opacity: 0.7;
+
+    animation: lineAppear 1.5s ease-out 1s both;
+}
+
+
+@keyframes lineAppear {
+
+    from {
+        width: 0;
+        opacity: 0;
+    }
+
+    to {
+        width: 120px;
+        opacity: 0.7;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px;
+    }
+
+    #thanks {
+        font-size: 3.2rem;
+        letter-spacing: -2px;
+    }
+
+    #thanks::before {
+        width: 55px;
+        height: 55px;
+
+        margin-right: 10px;
+
+        font-size: 1.8rem;
+    }
+
+    #message {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order/Payment</title>
+    <link rel="stylesheet" href="orders_AI.css">
+</head>
+<body>
+    <h1 id="food_order">ORDER YOUR CHOICES HERE</h1>
+    <form id="form_order">
+        <label for="train_no"><b>Train number:</b></label>
+        <br>
+        <input type="text" id="train_no" placeholder="Enter your train number">
+        <br><br>
+        <label for="coach"><b>Coach:</b></label>
+        <br>
+        <input type="text" id="coach" placeholder="Enter your Coach">
+        <br><br>
+        <label for="seat">Seat:</label>
+        <br>
+        <input type="text" id="seat" placeholder="Seat number">
+        <select name="seat">
+            <option value="upper">Upper</option>
+            <option value="sideupper">Sideupper</option>
+            <option value="lower">lower</option>
+            <option value="sideLower">SideLower</option>
+            <option value="middle">Middle</option>
+        </select>
+        <br><br>
+        <label for="delivery_station">Delivery Station:</label>
+        <br>
+        <input list="delivery_stations" placeholder="Type to search...">
+        <datalist id="delivery_stations">
+            <option value="Delhi">Delhi</option>
+            <option value="Asansol">Asansol</option>
+            <option value="Bhadohi">Bhadohi</option>
+            <option value="Varanasi">Varanasi</option>
+            <option value="Lucknow">Lucknow</option>
+            <option value="Roorkee">Roorkee</option>
+            <option value="Phagwara">Phagwara</option>
+            <option value="Jalandhar">Jalandhar</option>
+            <option value="Kapurthala">Kapurthala</option>
+            <option value="Chandigarh">Chandigarh</option>
+        </datalist>
+        <br><br>
+        <button type="submit" id="submit_button"><a href="Payment.html" style="text-decoration:none">Place Order</a></button>
+    </form>
+</body>
+</html>

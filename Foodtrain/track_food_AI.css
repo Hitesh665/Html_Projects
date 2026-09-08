@@ -1,0 +1,715 @@
+/* Track Order Page */
+/* 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.track_order {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #fff7ed, #fed7aa);
+    color: #333;
+} */
+
+/* Main heading 
+#heading {
+    margin-bottom: 12px;
+    font-size: 38px;
+    font-weight: 700;
+    color: #ea580c;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+ /* Description */
+/* #information\.para {
+    margin-bottom: 25px;
+    color: #666;
+    font-size: 17px;
+    text-align: center;
+} */
+
+/* Order number input */
+/* #tracking_no\. { 
+    width: min(400px, 90vw);
+    padding: 15px 18px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+    font-size: 16px;
+    transition: 0.25s ease;
+} */
+
+/* #tracking_no\.:focus {
+    border-color: #f97316;
+    box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.15);
+} */
+
+/* Enter button */
+/* #tracking_submit {
+    width: min(400px, 90vw);
+    margin-top: 16px;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #f97316;
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12);
+    transition: 0.25s ease;
+} */
+
+/* #tracking_submit:hover {
+    background: #ea580c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.16);
+} */
+
+/* #tracking_submit:active {
+    transform: translateY(0);
+} */
+
+/* #tracking_submit a {
+    display: block;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    text-decoration: none;
+} */
+
+/* Mobile */
+/* @media (max-width: 500px) {
+    #heading {
+        font-size: 30px;
+    }
+
+    #information\.para {
+        font-size: 15px;
+    }
+
+    body.track_order {
+        padding: 20px;
+    }
+} */
+/* =========================================================
+   FOODTRAIN — TRACK ORDER PAGE
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+/* ==================== GLOBAL ==================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.track_order {
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+
+    font-family: 'Inter', sans-serif;
+
+    color: #1f2937;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 10% 15%,
+            rgba(249, 115, 22, 0.20),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(251, 146, 60, 0.18),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            135deg,
+            #fff7ed 0%,
+            #ffedd5 45%,
+            #ffffff 100%
+        );
+}
+
+
+/* ==================== AMBIENT BACKGROUND ==================== */
+
+body.track_order::before,
+body.track_order::after {
+
+    content: "";
+
+    position: fixed;
+
+    z-index: -1;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    filter: blur(2px);
+}
+
+
+/* Large floating circle */
+
+body.track_order::before {
+
+    width: 380px;
+    height: 380px;
+
+    top: -150px;
+    left: -130px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(249, 115, 22, 0.15),
+            rgba(249, 115, 22, 0)
+        );
+
+    animation:
+        floatingOne 10s ease-in-out infinite;
+}
+
+
+/* Bottom circle */
+
+body.track_order::after {
+
+    width: 330px;
+    height: 330px;
+
+    right: -120px;
+    bottom: -130px;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(234, 88, 12, 0.13),
+            rgba(234, 88, 12, 0)
+        );
+
+    animation:
+        floatingTwo 12s ease-in-out infinite;
+}
+
+
+@keyframes floatingOne {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(35px, 25px) scale(1.1);
+    }
+}
+
+
+@keyframes floatingTwo {
+
+    0%,
+    100% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate(-30px, -35px) scale(1.08);
+    }
+}
+
+
+/* ==================== HEADING ==================== */
+
+#heading {
+
+    position: relative;
+
+    margin-bottom: 14px;
+
+    text-align: center;
+
+    font-size: clamp(34px, 5vw, 54px);
+
+    font-weight: 800;
+
+    letter-spacing: -1.8px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #c2410c,
+            #f97316,
+            #fb923c,
+            #f97316,
+            #c2410c
+        );
+
+    background-size: 300% auto;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+
+    animation:
+        gradientMove 5s linear infinite,
+        headingEnter 0.8s ease;
+}
+
+
+@keyframes gradientMove {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 300% center;
+    }
+}
+
+
+@keyframes headingEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(-25px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* Animated underline */
+
+#heading::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -13px;
+
+    width: 55%;
+    height: 4px;
+
+    transform: translateX(-50%);
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #f97316,
+            #fb923c,
+            #f97316,
+            transparent
+        );
+
+    box-shadow:
+        0 0 14px rgba(249, 115, 22, 0.45);
+
+    animation: underlinePulse 2.5s ease-in-out infinite;
+}
+
+
+@keyframes underlinePulse {
+
+    0%,
+    100% {
+        opacity: 0.5;
+        width: 45%;
+    }
+
+    50% {
+        opacity: 1;
+        width: 70%;
+    }
+}
+
+
+/* ==================== DESCRIPTION ==================== */
+
+#information\\.para {
+
+    margin-bottom: 28px;
+
+    text-align: center;
+
+    color: #6b7280;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.1px;
+
+    animation: paragraphEnter 0.8s ease 0.15s both;
+}
+
+
+@keyframes paragraphEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==================== INPUT ==================== */
+
+#tracking_no {
+
+    width: min(470px, 90vw);
+
+    height: 50px;
+
+    padding: 0 20px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: #1f2937;
+
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1.5px solid
+        rgba(229, 231, 235, 0.9);
+
+    border-radius: 15px;
+
+    outline: none;
+
+    box-shadow:
+        0 10px 30px rgba(124, 45, 18, 0.07);
+
+    transition:
+        border 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+
+    animation: inputEnter 0.8s ease 0.25s both;
+}
+
+
+@keyframes inputEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+#tracking_no ::placeholder {
+
+    color: #9ca3af;
+
+    transition: 0.25s ease;
+}
+
+
+#tracking_no :hover {
+
+    border-color: #fdba74;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    transform: translateY(-1px);
+}
+
+
+#tracking_no  :focus {
+
+    border-color: #f97316;
+
+    background: white;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 0 4px rgba(249, 115, 22, 0.10),
+        0 15px 35px rgba(234, 88, 12, 0.12);
+}
+
+
+#tracking_no :focus::placeholder {
+
+    transform: translateX(5px);
+
+    opacity: 0.5;
+}
+
+
+/* ==================== BUTTON ==================== */
+
+#tracking_submit {
+
+    position: relative;
+
+    width: min(470px, 90vw);
+
+    height: 58px;
+
+    margin-top: 16px;
+
+    overflow: hidden;
+
+    border: none;
+
+    border-radius: 15px;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            110deg,
+            #c2410c,
+            #ea580c,
+            #f97316,
+            #fb923c,
+            #ea580c
+        );
+
+    background-size: 300% auto;
+
+    box-shadow:
+        0 12px 28px
+        rgba(234, 88, 12, 0.25);
+
+    animation:
+        buttonGradient 5s linear infinite,
+        buttonEnter 0.8s ease 0.35s both;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+@keyframes buttonGradient {
+
+    0% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: 300% center;
+    }
+}
+
+
+@keyframes buttonEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Moving shine */
+
+#tracking_submit::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    transform: skewX(-20deg);
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent
+        );
+
+    transition: left 0.7s ease;
+}
+
+
+#tracking_submit:hover::before {
+    left: 140%;
+}
+
+
+/* Hover */
+
+#tracking_submit:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 18px 38px
+        rgba(234, 88, 12, 0.32);
+}
+
+
+/* Click */
+
+#tracking_submit:active {
+
+    transform: translateY(0) scale(0.98);
+
+    box-shadow:
+        0 7px 15px
+        rgba(234, 88, 12, 0.20);
+}
+
+
+/* ==================== BUTTON LINK ==================== */
+
+#tracking_submit a {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: inherit;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* ==================== MOBILE ==================== */
+
+@media (max-width: 600px) {
+
+    body.track_order {
+
+        padding: 20px;
+    }
+
+    #heading {
+
+        font-size: 32px;
+
+        letter-spacing: -1px;
+    }
+
+    #information\\.para {
+
+        font-size: 14px;
+
+        max-width: 330px;
+
+        line-height: 1.6;
+    }
+
+    #tracking_no\\
+    #tracking_submit {
+
+        width: 94%;
+
+        height: 54px;
+    }
+}
+
+
+@media (max-width: 400px) {
+
+    #heading {
+        font-size: 28px;
+    }
+
+    #information\\.para {
+        font-size: 13px;
+    }
+}
+
+
+/* ==================== ACCESSIBILITY ==================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration: 0.01ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        transition-duration: 0.01ms !important;
+    }
+}
+
