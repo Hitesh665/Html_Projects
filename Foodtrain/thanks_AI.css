@@ -261,3 +261,8 @@ body::after {
         transition: none !important;
     }
 }
+#my_cart{
+     color:#22c55e;
+     text-decoration-line:none;
+
+}
