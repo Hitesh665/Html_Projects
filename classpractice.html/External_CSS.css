@@ -1,0 +1,19 @@
+/* *{
+     background-image:url("meghalaya.jpg");
+    height:100%;
+    width:100%;
+} */
+.Hello{
+    height:50%;
+    width:60%;
+    background-color:rgb(225, 46, 159);
+    padding:20px;
+    font-size: var();
+}
+#h2{
+    color:white;
+    height:40%;
+    width:40%;
+    padding:10px;
+    background-color: rgba(92, 205, 72, 0.256);
+}
